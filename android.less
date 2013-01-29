@@ -1,0 +1,380 @@
+// # # # MIXINS
+//
+// Great LESS Mixins from LESS Hat (http://lesshat.com/)
+//
+@w3c: true; // Unprefixed W3C syntax
+@webkit: true; // Chrome 7+, Safari 5+, iOS5, Android
+@moz: true; //  Firefox 4+
+@opera: true; // Opera 10.5+
+@ms: true;  // IE 10+
+
+//Signals
+//
+@webkitSignal: 1;
+@mozSignal: 2;
+@operaSignal: 3;
+@msSignal: 4;
+@w3cSignal: 5;
+
+.gradient(...){
+      //  Local config for disabling properties
+      @mozLocal: true; //  Firefox 4+
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @operaLocal: true; // Opera 10.5+
+      @w3cLocal: true; // Unprefixed W3C syntax
+
+      @backgroundMoz: ~`(function(){var a,b,c,d,e,f,g,h,i,j,k;a="@{arguments}",c=null,d=a.split(/,(?=\s*(?:linear|radial))/g),e=d.length,k=/to\s*top/,j=/to\s*right/,h=/to\s*bottom/,i=/to\s*left/,b=/\d*deg/,f=0;while(f<e){/linear/.test(d[f])?(d[f]=d[f].replace(/linear-gradient/,"-moz-linear-gradient"),k.test(d[f])?d[f]=d[f].replace(k,"bottom"):j.test(d[f])?d[f]=d[f].replace(j,"left"):h.test(d[f])?d[f]=d[f].replace(h,"top"):i.test(d[f])?d[f]=d[f].replace(i,"right"):b.test(d[f])&&(g=d[f].match(/\d*deg/),g=(parseInt(g)-90)*-1+"deg",d[f]=d[f].replace(b,g))):d[f]=d[f].replace(/radial-gradient/,"-moz-radial-gradient").replace(/,\s* \d*(px|%) \d*(px|%)/,", circle").replace(/\(+\s*(.*) at\s*([^,]+)/g,"($2, $1");try{"".trim(),c=!0}catch(l){c=!1}c&&(d[f]=d[f].trim()),f++}return d.toString().replace(/\[/g,"").replace(/\]/g,"");}())`;
+      @backgroundWebkit: ~`(function(){var a,b,c,d,e,f,g,h,i,j,k;a="@{arguments}",c=null,d=a.split(/,(?=\s*(?:linear|radial))/g),e=d.length,k=/to\s*top/,j=/to\s*right/,h=/to\s*bottom/,i=/to\s*left/,b=/\d*deg/,f=0;while(f<e){/linear/.test(d[f])?(d[f]=d[f].replace(/linear-gradient/,"-webkit-linear-gradient"),k.test(d[f])?d[f]=d[f].replace(k,"bottom"):j.test(d[f])?d[f]=d[f].replace(j,"left"):h.test(d[f])?d[f]=d[f].replace(h,"top"):i.test(d[f])?d[f]=d[f].replace(i,"right"):b.test(d[f])&&(g=d[f].match(/\d*deg/),g=(parseInt(g)-90)*-1+"deg",d[f]=d[f].replace(b,g))):d[f]=d[f].replace(/radial-gradient/,"-webkit-radial-gradient").replace(/\(+\s*(.*) at\s*([^,]+)/g,"($2, $1");try{"".trim(),c=!0}catch(l){c=!1}c&&(d[f]=d[f].trim()),f++}return d.toString().replace(/\[/g,"").replace(/\]/g,"");}())`;
+      @backgroundOpera: ~`(function(){var a,b,c,d,e,f,g,h,i,j,k;a="@{arguments}",c=null,d=a.split(/,(?=\s*(?:linear|radial))/g),e=d.length,k=/to\s*top/,j=/to\s*right/,h=/to\s*bottom/,i=/to\s*left/,b=/\d*deg/,f=0;while(f<e){/linear/.test(d[f])?(d[f]=d[f].replace(/linear-gradient/,"-o-linear-gradient"),k.test(d[f])?d[f]=d[f].replace(k,"bottom"):j.test(d[f])?d[f]=d[f].replace(j,"left"):h.test(d[f])?d[f]=d[f].replace(h,"top"):i.test(d[f])?d[f]=d[f].replace(i,"right"):b.test(d[f])&&(g=d[f].match(/\d*deg/),g=(parseInt(g)-90)*-1+"deg",d[f]=d[f].replace(b,g))):d[f]=d[f].replace(/radial-gradient/,"-o-radial-gradient").replace(/\(+\s*(.*) at\s*([^,]+)/g,"($2, $1");try{"".trim(),c=!0}catch(l){c=!1}c&&(d[f]=d[f].trim()),f++}return d.toString().replace(/\[/g,"").replace(/\]/g,"");})()`;
+      @backgroundW3C: ~`(function(){var a,b,c,d,e;a="@{arguments}",b=null,c=a.split(/,(?=\s*(?:linear|radial))/g),d=c.length,e=0;while(e<d){try{"".trim(),b=!0}catch(f){b=!1}b&&(c[e]=c[e].trim()),e++}return c.toString().replace(/\[/g,"").replace(/\]/g,"");}())`;
+
+      .result(@arguments, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { background-image: @arguments; }
+      .result(@arguments, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+      .result(@arguments, @boolean, @localBoolean, @property) when (@boolean = true) and (@localBoolean = true) and (isstring(@property)) { background-image: @arguments; }
+      .result(@arguments, @boolean, @localBoolean, @property) when not (@boolean = true), not (@localBoolean = true), not (isstring(@property)) { }
+
+      // --  this comment must be here because of LESS bug
+      .result(@backgroundMoz, @moz, @mozLocal);
+      // --
+      .result(@backgroundWebkit, @webkit, @webkitLocal);
+      // --
+      .result(@backgroundOpera, @opera, @operaLocal);
+      // --
+      .result(@backgroundW3C, @w3c, @w3cLocal);
+}
+
+
+
+.transform(@arguments:none, ...){
+
+      //  Local config for disabling properties
+
+      @w3cLocal: true; // Unprefixed W3C syntax
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @mozLocal: true; //  Firefox 4+
+      @operaLocal: true; // Opera 10.5+
+      @msLocal: true;  // IE 10+
+
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform: @arguments;}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform: @arguments;}
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transform: @arguments;}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform: @arguments;}
+        .inception (@signal, @arguments) when (@signal = 5) { transform: @arguments;}
+        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+        .inception(@signal, @arguments);
+      }
+      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+      // --  this comment must be here because of LESS bug
+      .result(@arguments, @mozSignal, @moz, @mozLocal);
+      // --
+      .result(@arguments, @operaSignal, @opera, @operaLocal);
+      // --
+      .result(@arguments, @msSignal, @ms, @msLocal);
+      // --
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+.transform-origin(@arguments:50% 50% 0){
+
+      //  Local config for disabling properties
+
+      @w3cLocal: true; // Unprefixed W3C syntax
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @mozLocal: true; //  Firefox 4+
+      @operaLocal: true; // Opera 10.5+
+      @msLocal: true;  // IE 10+
+
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-transform-origin: @arguments;}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-transform-origin: @arguments;}
+        .inception (@signal, @arguments) when (@signal = 3) { -o-transform-origin: @arguments;}
+        .inception (@signal, @arguments) when (@signal = 4) { -ms-transform-origin: @arguments;}
+        .inception (@signal, @arguments) when (@signal = 5) { transform-origin: @arguments;}
+        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+        .inception(@signal, @arguments);
+      }
+      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+      // --  this comment must be here because of LESS bug
+      .result(@arguments, @mozSignal, @moz, @mozLocal);
+      // --
+      .result(@arguments, @operaSignal, @opera, @operaLocal);
+      // --
+      .result(@arguments, @msSignal, @ms, @msLocal);
+      // --
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+}
+
+// Transition-Mixin
+// 
+.transition (@trans-time, @trans-grad: ease-in-out) {
+  -webkit-transition: all @trans-time @trans-grad;  
+     -moz-transition: all @trans-time @trans-grad;
+      -ms-transition: all @trans-time @trans-grad;
+       -o-transition: all @trans-time @trans-grad;
+          transition: all @trans-time @trans-grad;
+}
+
+// Animation-Mixin
+//
+.animation (...) {
+  -webkit-animation: @arguments;  
+     -moz-animation: @arguments;
+      -ms-animation: @arguments;
+       -o-animation: @arguments;
+          animation: @arguments;
+}
+
+// # # # VARIABLES
+//
+@green: #A4CA37;
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:700);
+
+// # # # KEYFRAMES
+//
+
+@keyframes wink
+{
+0% {.transform(rotate(0deg)); .transform-origin(top center);}
+30% {.transform(rotate(-195deg));.transform-origin(top center);}
+40% {.transform(rotate(-160deg));.transform-origin(top center);}
+50% {.transform(rotate(-195deg));.transform-origin(top center);}
+60% {.transform(rotate(-160deg));.transform-origin(top center);}
+70% {.transform(rotate(-195deg));.transform-origin(top center);}
+80% {.transform(rotate(-160deg));.transform-origin(top center);}
+100% {.transform(rotate(0deg)); .transform-origin(top center);}
+}
+
+@-o-keyframes wink
+{
+0% {.transform(rotate(0deg)); .transform-origin(top center);}
+30% {.transform(rotate(-195deg));.transform-origin(top center);}
+40% {.transform(rotate(-160deg));.transform-origin(top center);}
+50% {.transform(rotate(-195deg));.transform-origin(top center);}
+60% {.transform(rotate(-160deg));.transform-origin(top center);}
+70% {.transform(rotate(-195deg));.transform-origin(top center);}
+80% {.transform(rotate(-160deg));.transform-origin(top center);}
+100% {.transform(rotate(0deg)); .transform-origin(top center);}
+}
+
+@-webkit-keyframes wink
+{
+0% {.transform(rotate(0deg)); .transform-origin(top center);}
+30% {.transform(rotate(-195deg));.transform-origin(top center);}
+40% {.transform(rotate(-160deg));.transform-origin(top center);}
+50% {.transform(rotate(-195deg));.transform-origin(top center);}
+60% {.transform(rotate(-160deg));.transform-origin(top center);}
+70% {.transform(rotate(-195deg));.transform-origin(top center);}
+80% {.transform(rotate(-160deg));.transform-origin(top center);}
+100% {.transform(rotate(0deg)); .transform-origin(top center);}
+}
+
+@-moz-keyframes wink
+{
+0% {.transform(rotate(0deg)); .transform-origin(top center);}
+30% {.transform(rotate(-195deg));.transform-origin(top center);}
+40% {.transform(rotate(-160deg));.transform-origin(top center);}
+50% {.transform(rotate(-195deg));.transform-origin(top center);}
+60% {.transform(rotate(-160deg));.transform-origin(top center);}
+70% {.transform(rotate(-195deg));.transform-origin(top center);}
+80% {.transform(rotate(-160deg));.transform-origin(top center);}
+100% {.transform(rotate(0deg)); .transform-origin(top center);}
+}
+
+@keyframes rotate
+{
+0% {.transform(rotate(0deg) translate(0));}
+30% {.transform(rotate(-5deg) translate(-4px,-7px));}
+80% {.transform(rotate(-5deg) translate(-4px,-7px));}
+100% {.transform(rotate(0deg) translate(0,0));}
+}
+
+@-o-keyframes rotate
+{
+0% {.transform(rotate(0deg) translate(0));}
+30% {.transform(rotate(-5deg) translate(-4px,-7px));}
+80% {.transform(rotate(-5deg) translate(-4px,-7px));}
+100% {.transform(rotate(0deg) translate(0,0));}
+}
+
+@-moz-keyframes rotate
+{
+0% {.transform(rotate(0deg) translate(0));}
+30% {.transform(rotate(-5deg) translate(-4px,-7px));}
+80% {.transform(rotate(-5deg) translate(-4px,-7px));}
+100% {.transform(rotate(0deg) translate(0,0));}
+}
+
+@-webkit-keyframes rotate
+{
+0% {.transform(rotate(0deg) translate(0));}
+30% {.transform(rotate(-5deg) translate(-4px,-7px));}
+80% {.transform(rotate(-5deg) translate(-4px,-7px));}
+100% {.transform(rotate(0deg) translate(0,0));}
+}
+
+// # # # CSS
+//
+
+html {
+	height:100%
+}
+
+body {
+	margin: 0;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    .gradient(~"linear-gradient(top, #fff, #f7f7f7)");
+
+	section {
+		width: 100%;
+		height: 500px;
+		display: block;
+		position: relative;
+	}
+
+	.wrapper {
+		width: 180px;
+		margin: 200px auto 0;
+
+		p {
+			position: relative;
+			top:250px;
+			width:80px;
+			font-family: "Droid Sans", sans-serif;
+			font-size: 3em;
+			text-transform: uppercase;
+			font-weight:bold;
+			line-height:0;
+			width: 160px;
+			margin: 0 auto;
+			color: @green;
+			text-shadow: 0 2px 0 lighten(@green, 20%),0 3px 0px darken(@green, 15%);
+
+			&:nth-child(3) {
+				font-size:5em;
+				margin-top: 0.8em;
+				width: 170px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+
+	.android {
+	    position: relative;
+	    .transition(0.5s);
+
+	    &:hover {
+	    	.head {
+	    		.transition(0.5s);
+	    		.animation(rotate 3s 1);
+	    	}
+
+	    	.arms.right {
+	    		.transition(0.3s);
+				.animation(wink 3s 1);
+	    	}
+	    }
+
+		.body {
+		    width: 180px;
+		    height: 145px;
+		    background-color: @green;
+		    border-radius: 0px 0px 25px 25px;
+		    position: absolute;
+
+		    &::before, 
+		    &::after {
+			    background-color: @green;
+			    content: '';
+			    width: 35px;
+			    height: 55px;
+			    bottom: -45px;
+			    position: absolute;
+			    border-radius: 0px 0px 50px 50px;
+			}
+			
+			&::before {
+				left: 38px; 
+			}
+
+			&::after {
+				right: 38px;
+			}
+		}
+
+		.head {
+		    width: 180px;
+		    height: 85px;
+		    .transition(0.5s);
+		    background-color: @green;
+		    border-radius: 200px 200px 0 0;
+		    position: absolute;
+		    top: -92px;
+
+		    &::before,
+			&::after {
+			    background-color: @green;
+			    content: '';
+			    width: 10px;   
+			    height: 30px;
+			    position: absolute;
+			    top: -10px;
+			    border-radius: 20px 20px 0px 0px;
+			}
+
+			&::after {
+				.transform(translate(30px, 0px) rotate(-30deg));
+			}
+
+			&::before{
+				.transform(translate(140px, 0px) rotate(30deg));
+			}
+		}
+		
+		.arms {
+			background-color: @green;
+			width: 35px;   
+			height: 123px;
+			top: -8px;
+			.transition(0.3s);
+			position: absolute;
+			border-radius: 40px 40px 40px 40px;  
+
+			&.left {
+				left: -45px;
+			}
+
+			&.right{
+				right: -45px;
+			}
+		}
+		
+		.eyes {
+			&::before,
+			&::after {
+			    background-color: #FFFFFF;
+			    content: '';
+			    width: 16px;   
+			    height: 16px;
+			    top: 38px;
+			    position: absolute;
+			    border-radius: 20px;
+			}
+
+			&::before {
+				left: 42px;
+			}
+
+			&::after{
+				right: 42px;
+			}
+		}
+	}
+}
