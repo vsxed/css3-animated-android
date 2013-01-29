@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans:700);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400);
 @keyframes wink {
   0% {
     -webkit-transform: rotate(0deg);
@@ -525,7 +525,7 @@ body {
 }
 body section {
   width: 100%;
-  height: 500px;
+  height: 280px;
   display: block;
   position: relative;
 }
@@ -545,7 +545,6 @@ body .wrapper p {
   width: 160px;
   margin: 0 auto;
   color: #a4ca37;
-  text-shadow: 0 2px 0 #c9df88, 0 3px 0px #748f26;
 }
 body .wrapper p:nth-child(3) {
   font-size: 5em;
@@ -561,30 +560,6 @@ body .android {
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-}
-body .android:hover .head {
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  -webkit-animation: rotate 3s 1;
-  -moz-animation: rotate 3s 1;
-  -ms-animation: rotate 3s 1;
-  -o-animation: rotate 3s 1;
-  animation: rotate 3s 1;
-}
-body .android:hover .arms.right {
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -webkit-animation: wink 3s 1;
-  -moz-animation: wink 3s 1;
-  -ms-animation: wink 3s 1;
-  -o-animation: wink 3s 1;
-  animation: wink 3s 1;
 }
 body .android .body {
   width: 180px;
@@ -604,10 +579,10 @@ body .android .body::after {
   border-radius: 0px 0px 50px 50px;
 }
 body .android .body::before {
-  left: 38px;
+  left: 45px;
 }
 body .android .body::after {
-  right: 38px;
+  right: 45px;
 }
 body .android .head {
   width: 180px;
@@ -646,6 +621,18 @@ body .android .head::before {
   -ms-transform: translate(140px, 0px) rotate(30deg);
   transform: translate(140px, 0px) rotate(30deg);
 }
+body .android .head.rotate {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-animation: rotate 3s 1;
+  -moz-animation: rotate 3s 1;
+  -ms-animation: rotate 3s 1;
+  -o-animation: rotate 3s 1;
+  animation: rotate 3s 1;
+}
 body .android .arms {
   background-color: #a4ca37;
   width: 35px;
@@ -665,6 +652,43 @@ body .android .arms.left {
 body .android .arms.right {
   right: -45px;
 }
+body .android .arms.right.wink {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-animation: wink 3s 1;
+  -moz-animation: wink 3s 1;
+  -ms-animation: wink 3s 1;
+  -o-animation: wink 3s 1;
+  animation: wink 3s 1;
+}
+body .android .arms.flag-left::before,
+body .android .arms.flag-right::before {
+  content: ' ';
+  height: 60px;
+  bottom: -35px;
+  left: 15px;
+  width: 5px;
+  background-color: #888;
+  position: absolute;
+}
+body .android .arms.flag-left::after,
+body .android .arms.flag-right::after {
+  content: ' ';
+  height: 50px;
+  width: 70px;
+  position: absolute;
+  bottom: -65px;
+  background-color: #333;
+}
+body .android .arms.flag-right::after {
+  right: 15px;
+}
+body .android .arms.flag-left::after {
+  left: 15px;
+}
 body .android .eyes::before,
 body .android .eyes::after {
   background-color: #FFFFFF;
@@ -680,4 +704,41 @@ body .android .eyes::before {
 }
 body .android .eyes::after {
   right: 42px;
+}
+a.button {
+  padding: 15px 5px;
+  color: #a4ca37;
+  background-image: -moz-linear-gradient(top, #fff, #ddd);
+  background-image: -webkit-linear-gradient(top, #fff, #ddd);
+  background-image: -o-linear-gradient(top, #fff, #ddd);
+  background-image: linear-gradient(top, #fff, #ddd);
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 0 0 #eee;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  max-width: 300px;
+  text-shadow: 0 1px 0 #637b20, 0 2px 0px #d2e59c;
+  margin: 0 auto 10px;
+  display: block;
+  font-family: "Droid Sans", sans-serif;
+  font-size: 1.4em;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  border-radius: 4px;
+}
+a.button:hover {
+  background-image: -moz-linear-gradient(top, #ddd, #fff);
+  background-image: -webkit-linear-gradient(top, #ddd, #fff);
+  background-image: -o-linear-gradient(top, #ddd, #fff);
+  background-image: linear-gradient(top, #ddd, #fff);
+  color: #7d9b29;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
