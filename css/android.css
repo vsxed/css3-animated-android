@@ -511,6 +511,202 @@
     transform: rotate(0deg) translate(0, 0);
   }
 }
+@-webkit-keyframes flaggy-right {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: top center;
+    -moz-transform-origin: top center;
+    -o-transform-origin: top center;
+    -ms-transform-origin: top center;
+    transform-origin: top center;
+  }
+  15% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: top center;
+    -moz-transform-origin: top center;
+    -o-transform-origin: top center;
+    -ms-transform-origin: top center;
+    transform-origin: top center;
+  }
+  30% {
+    -webkit-transform: rotate(-90deg) translate(-35px, -5px);
+    -moz-transform: rotate(-90deg) translate(-35px, -5px);
+    -o-transform: rotate(-90deg) translate(-35px, -5px);
+    -ms-transform: rotate(-90deg) translate(-35px, -5px);
+    transform: rotate(-90deg) translate(-35px, -5px);
+    -webkit-transform-origin: left top;
+    -moz-transform-origin: left top;
+    -o-transform-origin: left top;
+    -ms-transform-origin: left top;
+    transform-origin: left top;
+  }
+  45% {
+    -webkit-transform: rotate(-235deg) rotateY(180deg) translate(-35px, -5px);
+    -moz-transform: rotate(-235deg) rotateY(180deg) translate(-35px, -5px);
+    -o-transform: rotate(-235deg) rotateY(180deg) translate(-35px, -5px);
+    -ms-transform: rotate(-235deg) rotateY(180deg) translate(-35px, -5px);
+    transform: rotate(-235deg) rotateY(180deg) translate(-35px, -5px);
+    -webkit-transform-origin: left top;
+    -moz-transform-origin: left top;
+    -o-transform-origin: left top;
+    -ms-transform-origin: left top;
+    transform-origin: left top;
+  }
+  60% {
+    -webkit-transform: rotate(-235deg) rotateY(180deg) translate(-35px, -5px);
+    -moz-transform: rotate(-235deg) rotateY(180deg) translate(-35px, -5px);
+    -o-transform: rotate(-235deg) rotateY(180deg) translate(-35px, -5px);
+    -ms-transform: rotate(-235deg) rotateY(180deg) translate(-35px, -5px);
+    transform: rotate(-235deg) rotateY(180deg) translate(-35px, -5px);
+    -webkit-transform-origin: left top;
+    -moz-transform-origin: left top;
+    -o-transform-origin: left top;
+    -ms-transform-origin: left top;
+    transform-origin: left top;
+  }
+  75% {
+    -webkit-transform: rotate(0deg) translate(0, 0);
+    -moz-transform: rotate(0deg) translate(0, 0);
+    -o-transform: rotate(0deg) translate(0, 0);
+    -ms-transform: rotate(0deg) translate(0, 0);
+    transform: rotate(0deg) translate(0, 0);
+    -webkit-transform-origin: left top;
+    -moz-transform-origin: left top;
+    -o-transform-origin: left top;
+    -ms-transform-origin: left top;
+    transform-origin: left top;
+  }
+  90% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: right top;
+    -moz-transform-origin: right top;
+    -o-transform-origin: right top;
+    -ms-transform-origin: right top;
+    transform-origin: right top;
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: right top;
+    -moz-transform-origin: right top;
+    -o-transform-origin: right top;
+    -ms-transform-origin: right top;
+    transform-origin: right top;
+  }
+}
+@-webkit-keyframes flaggy-left {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: right top;
+    -moz-transform-origin: right top;
+    -o-transform-origin: right top;
+    -ms-transform-origin: right top;
+    transform-origin: right top;
+  }
+  15% {
+    -webkit-transform: rotate(180deg) translate(30px, -5px);
+    -moz-transform: rotate(180deg) translate(30px, -5px);
+    -o-transform: rotate(180deg) translate(30px, -5px);
+    -ms-transform: rotate(180deg) translate(30px, -5px);
+    transform: rotate(180deg) translate(30px, -5px);
+    -webkit-transform-origin: right top;
+    -moz-transform-origin: right top;
+    -o-transform-origin: right top;
+    -ms-transform-origin: right top;
+    transform-origin: right top;
+  }
+  30% {
+    -webkit-transform: rotate(90deg) translate(30px, -5px);
+    -moz-transform: rotate(90deg) translate(30px, -5px);
+    -o-transform: rotate(90deg) translate(30px, -5px);
+    -ms-transform: rotate(90deg) translate(30px, -5px);
+    transform: rotate(90deg) translate(30px, -5px);
+    -webkit-transform-origin: right top;
+    -moz-transform-origin: right top;
+    -o-transform-origin: right top;
+    -ms-transform-origin: right top;
+    transform-origin: right top;
+  }
+  45% {
+    -webkit-transform: rotate(90deg) translate(30px, -5px);
+    -moz-transform: rotate(90deg) translate(30px, -5px);
+    -o-transform: rotate(90deg) translate(30px, -5px);
+    -ms-transform: rotate(90deg) translate(30px, -5px);
+    transform: rotate(90deg) translate(30px, -5px);
+    -webkit-transform-origin: right top;
+    -moz-transform-origin: right top;
+    -o-transform-origin: right top;
+    -ms-transform-origin: right top;
+    transform-origin: right top;
+  }
+  60% {
+    -webkit-transform: rotate(45deg) translate(20px, 5px);
+    -moz-transform: rotate(45deg) translate(20px, 5px);
+    -o-transform: rotate(45deg) translate(20px, 5px);
+    -ms-transform: rotate(45deg) translate(20px, 5px);
+    transform: rotate(45deg) translate(20px, 5px);
+    -webkit-transform-origin: right top;
+    -moz-transform-origin: right top;
+    -o-transform-origin: right top;
+    -ms-transform-origin: right top;
+    transform-origin: right top;
+  }
+  75% {
+    -webkit-transform: rotate(180deg) translate(30px, -5px);
+    -moz-transform: rotate(180deg) translate(30px, -5px);
+    -o-transform: rotate(180deg) translate(30px, -5px);
+    -ms-transform: rotate(180deg) translate(30px, -5px);
+    transform: rotate(180deg) translate(30px, -5px);
+    -webkit-transform-origin: right top;
+    -moz-transform-origin: right top;
+    -o-transform-origin: right top;
+    -ms-transform-origin: right top;
+    transform-origin: right top;
+  }
+  90% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: right top;
+    -moz-transform-origin: right top;
+    -o-transform-origin: right top;
+    -ms-transform-origin: right top;
+    transform-origin: right top;
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: right top;
+    -moz-transform-origin: right top;
+    -o-transform-origin: right top;
+    -ms-transform-origin: right top;
+    transform-origin: right top;
+  }
+}
 html {
   height: 100%;
 }
@@ -638,6 +834,7 @@ body .android .arms {
   width: 35px;
   height: 123px;
   top: -8px;
+  border: 1px solid white;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -648,6 +845,13 @@ body .android .arms {
 }
 body .android .arms.left {
   left: -45px;
+}
+body .android .arms.left.l-flaggy {
+  -webkit-animation: flaggy-left 5s 1;
+  -moz-animation: flaggy-left 5s 1;
+  -ms-animation: flaggy-left 5s 1;
+  -o-animation: flaggy-left 5s 1;
+  animation: flaggy-left 5s 1;
 }
 body .android .arms.right {
   right: -45px;
@@ -663,6 +867,13 @@ body .android .arms.right.wink {
   -ms-animation: wink 3s 1;
   -o-animation: wink 3s 1;
   animation: wink 3s 1;
+}
+body .android .arms.right.r-flaggy {
+  -webkit-animation: flaggy-right 5s 1;
+  -moz-animation: flaggy-right 5s 1;
+  -ms-animation: flaggy-right 5s 1;
+  -o-animation: flaggy-right 5s 1;
+  animation: flaggy-right 5s 1;
 }
 body .android .arms.flag-left::before,
 body .android .arms.flag-right::before {

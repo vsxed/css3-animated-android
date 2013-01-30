@@ -137,7 +137,7 @@
 
 // # # # KEYFRAMES
 //
-
+// ANIMATION 1
 @keyframes wink
 {
 0% {.transform(rotate(0deg)); .transform-origin(top center);}
@@ -216,6 +216,31 @@
 30% {.transform(rotate(-5deg) translate(-4px,-7px));}
 80% {.transform(rotate(-5deg) translate(-4px,-7px));}
 100% {.transform(rotate(0deg) translate(0,0));}
+}
+
+// ANIMATION 2
+@-webkit-keyframes flaggy-right
+{
+0% {.transform(rotate(0deg)); .transform-origin(top center);}
+15% {.transform(rotate(0deg)); .transform-origin(top center);}
+30% {.transform(rotate(-90deg) translate(-35px,-5px)); .transform-origin(left top);}
+45% {.transform(rotate(-235deg) rotateY(180deg) translate(-35px,-5px)); .transform-origin(left top);}
+60% {.transform(rotate(-235deg) rotateY(180deg) translate(-35px,-5px)); .transform-origin(left top);}
+75% {.transform(rotate(0deg) translate(0,0)); .transform-origin(left top);}
+90% {.transform(rotate(0deg)); .transform-origin(right top);}
+100% {.transform(rotate(0deg)); .transform-origin(right top);}
+}
+
+@-webkit-keyframes flaggy-left
+{
+0% {.transform(rotate(0deg)); .transform-origin(right top);}
+15% {.transform(rotate(180deg) translate(30px,-5px)); .transform-origin(right top);}
+30% {.transform(rotate(90deg) translate(30px,-5px)); .transform-origin(right top);}
+45% {.transform(rotate(90deg) translate(30px,-5px)); .transform-origin(right top);}
+60% {.transform(rotate(45deg) translate(20px,5px)); .transform-origin(right top);}
+75% {.transform(rotate(180deg) translate(30px,-5px)); .transform-origin(right top);}
+90% {.transform(rotate(0deg)); .transform-origin(right top);}
+100% {.transform(rotate(0deg)); .transform-origin(right top);}
 }
 
 // # # # CSS
@@ -335,12 +360,17 @@ body {
 			width: 35px;   
 			height: 123px;
 			top: -8px;
+			border: 1px solid white;
 			.transition(0.3s);
 			position: absolute;
 			border-radius: 40px 40px 40px 40px;  
 
 			&.left {
 				left: -45px;
+
+				&.l-flaggy {
+	    			.animation(flaggy-left 5s 1);
+	    		}
 			}
 
 			&.right{
@@ -350,6 +380,10 @@ body {
 	    				.transition(0.3s);
 					.animation(wink 3s 1);
 	    			}
+
+	    		&.r-flaggy {
+	    			.animation(flaggy-right 5s 1);
+	    		}
 			}
 
 			&.flag-left,
@@ -378,6 +412,7 @@ body {
 			&.flag-right::after {
 				right: 15px;
 			}
+			
 
 			&.flag-left::after {
 				left: 15px;
