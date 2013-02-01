@@ -23,24 +23,17 @@ $(document).ready(function () {
           		});
 
               $anim3.click(function () {
-      //           $('.right').toggleClass('r-balls').delay(4500).queue(function() {  // Wait for it...
-      //             $(this).removeClass('r-balls').dequeue(); // aaaand it's gone!
-      //       });
-      // $('.left').toggleClass('l-balls').delay(4500).queue(function() {  // Wait for it...
-      //             $(this).removeClass('l-balls').dequeue(); // aaaand it's gone!
-      //       });
-      $('.leg').toggleClass('anim').delay(6050).queue(function() {  // Wait for it...
-                  $(this).removeClass('anim').dequeue(); // aaaand it's gone!
-            });
-      $('.eyes').toggleClass('anim').delay(6200).queue(function() {  // Wait for it...
-                  $(this).removeClass('anim').dequeue(); // aaaand it's gone!
-            });
-      $('.arms').toggleClass('moon').delay(6100).queue(function() {  // Wait for it...
-                  $(this).removeClass('moon').dequeue(); // aaaand it's gone!
-            });
-      $('.android').toggleClass('moonwalk').delay(6500).queue(function() {  // Wait for it...
-                  $(this).removeClass('moonwalk').dequeue(); // aaaand it's gone!
-            });
-
+                  $('.leg').toggleClass('anim').delay(6050).queue(function() {  // Wait for it...
+                              $(this).removeClass('anim').dequeue(); // aaaand it's gone!
+                        });
+                  $('.eyes').toggleClass('anim').delay(6200).queue(function() {  // Wait for it...
+                              $(this).removeClass('anim').dequeue(); // aaaand it's gone!
+                        });
+                  $('.arms').toggleClass('moon').delay(6100).queue(function() {  // Wait for it...
+                              $(this).removeClass('moon').dequeue(); // aaaand it's gone!
+                        });
+                  $('.android').toggleClass('moonwalk').delay(6500).queue(function() {  // Wait for it...
+                              $(this).removeClass('moonwalk').dequeue(); // aaaand it's gone!
+                        });
               });
 });
